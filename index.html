@@ -1,0 +1,86 @@
+<html lang="en">
+  <head>
+    <!-- figma:head-start -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#201e38" />
+    <title>Daylist — My Tasks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <!-- figma:head-end -->
+  </head>
+  <body>
+    <!-- figma:body-start -->
+    <main class="page">
+      <section class="card" aria-labelledby="title">
+        <header class="header">
+          <div class="glow" aria-hidden="true"></div>
+          <div class="header-row">
+            <div>
+              <p class="date" id="date"></p>
+              <h1 id="title">My tasks</h1>
+              <p class="subtitle">A clear plan for a focused day.</p>
+            </div>
+            <div class="ring" id="ring" aria-label="0% complete">
+              <div><strong id="percent">0%</strong><span>done</span></div>
+            </div>
+          </div>
+          <div class="track"><div id="progress"></div></div>
+        </header>
+
+        <div class="content">
+          <form id="task-form" class="add-form">
+            <label class="sr-only" for="task-input">Add a new task</label>
+            <input
+              id="task-input"
+              maxlength="160"
+              autocomplete="off"
+              placeholder="What needs to be done?"
+            />
+            <button id="add-button" type="submit" disabled>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+              <span>Add task</span>
+            </button>
+          </form>
+
+          <div class="filters" aria-label="Filter tasks">
+            <button class="filter active" type="button" data-filter="all" aria-pressed="true">
+              All <span id="all-count">0</span>
+            </button>
+            <button class="filter" type="button" data-filter="active" aria-pressed="false">
+              Active <span id="active-count">0</span>
+            </button>
+            <button class="filter" type="button" data-filter="completed" aria-pressed="false">
+              Completed <span id="completed-count">0</span>
+            </button>
+          </div>
+
+          <div class="list-heading">
+            <h2 id="task-count">Your list</h2>
+            <p id="complete-count" hidden></p>
+          </div>
+          <div class="empty" id="empty">
+            <div class="empty-icon">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path
+                  d="M9 5.5H6.75A1.75 1.75 0 0 0 5 7.25v12A1.75 1.75 0 0 0 6.75 21h10.5A1.75 1.75 0 0 0 19 19.25v-12a1.75 1.75 0 0 0-1.75-1.75H15M9 5.5v-1A1.5 1.5 0 0 1 10.5 3h3A1.5 1.5 0 0 1 15 4.5v1M9 5.5h6M8.5 10h7M8.5 14h5"
+                />
+              </svg>
+            </div>
+            <h3 id="empty-title">Your day is wide open</h3>
+            <p id="empty-message">Add your first task above and start making progress.</p>
+          </div>
+          <ul id="task-list" class="task-list" aria-live="polite"></ul>
+        </div>
+      </section>
+      <p class="save-note">Your tasks are saved automatically on this device.</p>
+    </main>
+    <script type="module" src="/script.js"></script>
+    <!-- figma:body-end -->
+  </body>
+</html>

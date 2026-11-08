@@ -1,0 +1,10 @@
+{
+  "description": "Organize daily tasks by adding, deleting, and completing items, with progress saved across page refreshes in a clean, responsive interface.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
